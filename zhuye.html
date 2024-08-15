@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+<title>❤💓💕💖💗💙💚💛💜💝🎇❤💓💕💖💗💙💚💛💜💝</title>
+<head>
+<style>
+
+html {
+            width: 100%;
+            height: 100%;}
+        body {
+            overflow: hidden;}
+a:link, a:visited {
+  background-color: #f44336;
+  color: White;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 40px;
+}
+
+a:hover, a:active {
+  background-color: blue;
+}
+body
+{ 
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size:100%100%;
+background-color: yellow
+}
+
+h1 {color: Red}
+h2 {color: Blue}
+
+.city {background-size:100%100%;
+background-color: Pink;
+color: DarkMagenta;
+text-align: center;
+float: left;
+margin: 5px;
+padding: 10px;
+width: 10px;
+height: 60px;
+border: 2px solid black;
+border-radius: 40px;
+} 
+</style>
+</head>
+
+<body id="fullscreen-element" background="https://github.com/linYML/xiaolin.github.io/upload/A.jpg">
+
+       
+
+ 
+    <script>
+        function requestFullscreen() {
+            var element = document.getElementById('fullscreen-element');
+            var requestMethod = 
+                element.requestFullscreen || //W3C
+                element.webkitRequestFullScreen || //Chrome等
+                element.mozRequestFullScreen || //FireFox
+                element.msRequestFullscreen; //IE11
+ 
+            if (requestMethod) {
+                requestMethod.call(element);
+            } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+                var wscript = new ActiveXObject("WScript.Shell");
+                if (wscript !== null) {
+                    wscript.SendKeys("{F11}");
+                }
+            }
+        }
+    </script>
+<canvas id="cvs"width="300" height="300">
+<script type="text/javascript">
+    var cvs = document.getElementById("cvs");
+    var ctx = cvs.getContext("2d");
+    var cw = cvs.width = document.body.clientWidth;
+    var ch = cvs.height = document.body.clientHeight;
+    //动画绘制对象
+    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    var codeRainArr = []; //代码雨数组
+    var cols = parseInt(cw / 15); //代码雨列数
+    var step = 30;    //步长，每一列内部数字之间的上下间隔
+    ctx.font = "bold 26px microsoft yahei"; //声明字体，个人喜欢微软雅黑
+ 
+    function createColorCv() {
+        //画布基本颜色
+        ctx.fillStyle = "blue";
+        ctx.fillRect(0, 0, cw, ch);
+    }
+ 
+    //创建代码雨
+    function createCodeRain() {
+        for (var n = 0; n < cols; n++) {
+            var col = [];
+            //基础位置，为了列与列之间产生错位
+            var basePos = parseInt(Math.random() * 500);
+            //随机速度 3~13之间
+            var speed = parseInt(Math.random(2) * 10) + 2;
+            //每组的x轴位置随机产生
+            var colx = parseInt(Math.random() * cw)
+ 
+            //绿色随机
+            var rgbr = 0;
+            var rgbg = parseInt(Math.random() * 255);
+            var rgbb = 0;
+            //ctx.fillStyle = "rgb("+r+','+g+','+b+")"
+ 
+            for (var i = 0; i < parseInt(ch / step) / 2; i++) {
+                var code = {
+                    x: colx,
+                    y: -(step * i) - basePos,
+                    speed: speed,
+                    //  text : parseInt(Math.random()*10)%2 == 0 ? 0 : 1  //随机生成0或者1
+                    text: ["💕", "💗", "💜", "❤", "💓", "💖", "💙", "💛", "💝", "💚", "👭", "🤍", "☘️", "🍀", "🌟", "🌸", "⭐", "🌹", "✵", "✺", "❋", "❃", "❁", "✿", "❀"][parseInt(Math.random() * 11)], //随机生成字母数组中的一个
+                    color: "rgb(" + rgbr + ',' + rgbg + ',' + rgbb + ")"
+                }
+                col.push(code);
+            }
+            codeRainArr.push(col);
+        }
+    }
+ 
+    //代码雨下起来
+    function codeRaining() {
+        //把画布擦干净
+        ctx.clearRect(0, 0, cw, ch);
+        //创建有颜色的画布
+        //createColorCv();
+        for (var n = 0; n < codeRainArr.length; n++) {
+            //取出列
+            col = codeRainArr[n];
+            //遍历列，画出该列的代码
+            for (var i = 0; i < col.length; i++) {
+                var code = col[i];
+                if (code.y > ch) {
+                    //如果超出下边界则重置到顶部
+                    code.y = 0;
+                } else {
+                    //匀速降落
+                    code.y += code.speed;
+                }
+                
+                //1 颜色也随机变化
+                //ctx.fillStyle = "hsl("+(parseInt(Math.random()*359)+1)+",30%,"+(50-i*2)+"%)"; 
+ 
+                //2 绿色逐渐变浅
+                // ctx.fillStyle = "hsl(123,80%,"+(30-i*2)+"%)"; 
+ 
+                //3 绿色随机
+                // var r= 0;
+                // var g= parseInt(Math.random()*255) + 3;
+                // var b= 0;
+                // ctx.fillStyle = "rgb("+r+','+g+','+b+")";
+ 
+                //4 一致绿
+                ctx.fillStyle = code.color;
+ 
+ 
+                //把代码画出来
+                ctx.fillText(code.text, code.x, code.y);
+            }
+        }
+        requestAnimationFrame(codeRaining);
+    }
+ 
+    //创建代码雨
+    createCodeRain();
+    //开始下雨吧 GO>>
+    requestAnimationFrame(codeRaining);
+</script>
+</canvas>
+<div>
+
+<div>
+<center><h1>👭❤💓💕💖💗💛💜💝💙<a href="C:\Users\ASUS\Desktop\我的网站\zhengyuan.html"target="_blank">缘</a>💙💓❤💕💖💗💛💜💝👫</h1></center>
+</div>
+
+<div>
+<h2><center>
+<p id="p">
+<button><div class="city">💖<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">百<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">年<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">修<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">得<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">同<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">船<a href="C:\Users\ASUS\Desktop\我的网站\wenshan.html"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">渡<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">千<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">年<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">修<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">得<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">共<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">枕<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">眠<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+<button><div class="city">💖<a href="https://www.baidu.com"target="_blank">🤩🤩🤩🤩🤩🤩</a></div></button>
+</p>
+</center>
+</h2>
+
+</div>
+
+
+
+</div>
+
+
+
+</body>
+<button onclick="requestFullscreen()">0</button>
+</html>
