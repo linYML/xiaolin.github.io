@@ -1,0 +1,28 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "xiaolin",
+    "description": "",
+    "home_page_url": "https://xiaolin.github.io",
+    "feed_url": "https://xiaolin.github.io/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "linzai"
+    },
+    "items": [
+        {
+            "id": "https://xiaolin.github.io/ggwgwefwe.html",
+            "url": "https://xiaolin.github.io/ggwgwefwe.html",
+            "title": "GGwgWEFWE",
+            "summary": "SFS’PGMS[F [sfg{Sgmd[ fkh[[[[[[[[[[[[[[[[[[ZD[FKHZTKJZ=\\TKJZ=PRTKJZRT=]JLZ]R[ YJ,KZ]RTKPJL=PZRKT,J=SP[RKTJ=SZ-K=K=P",
+            "content_html": "<p>SFS’PGMS[F</p><p>[sfg{Sgmd[\nfkh[[[[[[[[[[[[[[[[[[ZD[FKHZTKJZ=\\TKJZ=PRTKJZRT=]JLZ]R[\nYJ,KZ]RTKPJL=PZRKT,J=SP[RKTJ=SZ-K=K=P</p>",
+            "image": "https://xiaolin.github.io/media/posts/1/A.jpg",
+            "author": {
+                "name": "linzai"
+            },
+            "tags": [
+            ],
+            "date_published": "2024-08-15T18:56:20+08:00",
+            "date_modified": "2024-08-15T18:56:20+08:00"
+        }
+    ]
+}

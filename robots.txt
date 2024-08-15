@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://xiaolin.github.io/sitemap.xml

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <title>xiaolin</title>
+    <link href="https://xiaolin.github.io/feed.xml" rel="self" />
+    <link href="https://xiaolin.github.io" />
+    <updated>2024-08-15T18:56:20+08:00</updated>
+    <author>
+        <name>linzai</name>
+    </author>
+    <id>https://xiaolin.github.io</id>
+
+    <entry>
+        <title>GGwgWEFWE</title>
+        <author>
+            <name>linzai</name>
+        </author>
+        <link href="https://xiaolin.github.io/ggwgwefwe.html"/>
+        <id>https://xiaolin.github.io/ggwgwefwe.html</id>
+        <media:content url="https://xiaolin.github.io/media/posts/1/A.jpg" medium="image" />
+
+        <updated>2024-08-15T18:56:20+08:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://xiaolin.github.io/media/posts/1/A.jpg" alt="" />
+                    SFS’PGMS[F [sfg{Sgmd[ fkh[[[[[[[[[[[[[[[[[[ZD[FKHZTKJZ=\TKJZ=PRTKJZRT=]JLZ]R[ YJ,KZ]RTKPJL=PZRKT,J=SP[RKTJ=SZ-K=K=P
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://xiaolin.github.io/media/posts/1/A.jpg" class="type:primaryImage" alt="" /></p>
+                <p>SFS’PGMS[F</p><p>[sfg{Sgmd[
+fkh[[[[[[[[[[[[[[[[[[ZD[FKHZTKJZ=\TKJZ=PRTKJZRT=]JLZ]R[
+YJ,KZ]RTKPJL=PZRKT,J=SP[RKTJ=SZ-K=K=P</p>
+            ]]>
+        </content>
+    </entry>
+</feed>
